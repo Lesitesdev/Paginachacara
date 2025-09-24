@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chácara Paraíso - Eventos e Festas</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="font-sans text-gray-800">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 w-full bg-green-700 shadow z-50">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-4 text-white">
+      <h1 class="text-2xl font-bold cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        Chácara Paraíso
+      </h1>
+      <nav class="hidden md:flex space-x-6 text-white font-semibold">
+        <a href="#sobre" class="hover:text-green-300 transition">Sobre</a>
+        <a href="#servicos" class="hover:text-green-300 transition">Serviços</a>
+        <a href="#galeria" class="hover:text-green-300 transition">Galeria</a>
+        <a href="#depoimentos" class="hover:text-green-300 transition">Depoimentos</a>
+        <a href="#contato" class="hover:text-green-300 transition">Contato</a>
+      </nav>
+      <!-- botão WhatsApp mobile -->
+      <a href="https://wa.me/5511999999999" target="_blank" class="md:hidden bg-white text-green-700 px-4 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="relative w-full h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('/img/chacara-hero.jpg');">
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 text-center text-white px-6">
+      <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+        Seu evento inesquecível começa aqui
+      </h1>
+      <p class="text-lg md:text-2xl mb-6 drop-shadow-lg">
+        Casamentos, festas, finais de ano e confraternizações
+      </p>
+      <a href="https://wa.me/5511999999999" target="_blank"
+         class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold shadow-md hover:bg-gray-200 hover:scale-105 hover:shadow-lg transition">
+        Reserve pelo WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Sobre a Chácara</h2>
+      <p class="text-center text-lg md:text-xl max-w-3xl mx-auto mb-6">
+        A Chácara Paraíso oferece um espaço completo para tornar seus eventos inesquecíveis. 
+        Contamos com salão amplo, piscina, churrasqueira, estacionamento e toda infraestrutura para receber seus convidados com conforto e segurança.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <i class="fas fa-wine-glass-alt text-4xl text-green-700 mb-4"></i>
+          <h3 class="font-bold mb-2">Casamentos</h3>
+          <p>Local perfeito para o seu grande dia, com espaço amplo e elegante.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <i class="fas fa-birthday-cake text-4xl text-green-700 mb-4"></i>
+          <h3 class="font-bold mb-2">Festas & Aniversários</h3>
+          <p>Espaço completo para celebrar momentos especiais com familiares e amigos.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow text-center">
+          <i class="fas fa-tree text-4xl text-green-700 mb-4"></i>
+          <h3 class="font-bold mb-2">Confraternizações & Finais de Ano</h3>
+          <p>Eventos corporativos ou familiares com todo conforto e segurança.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Nossos Serviços</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="flex items-center space-x-6">
+          <img src="/img/piscina.jpg" alt="Piscina" class="w-32 h-32 rounded-lg object-cover shadow">
+          <div>
+            <h3 class="font-bold text-xl mb-2">Piscina e área de lazer</h3>
+            <p>Espaço para relaxamento e diversão de todos os convidados.</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <img src="/img/salao.jpg" alt="Salão" class="w-32 h-32 rounded-lg object-cover shadow">
+          <div>
+            <h3 class="font-bold text-xl mb-2">Salão coberto</h3>
+            <p>Perfeito para casamentos e festas em qualquer clima.</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <img src="/img/churrasqueira.jpg" alt="Churrasqueira" class="w-32 h-32 rounded-lg object-cover shadow">
+          <div>
+            <h3 class="font-bold text-xl mb-2">Churrasqueira</h3>
+            <p>Área gourmet para churrascos e confraternizações.</p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-6">
+          <img src="/img/estacionamento.jpg" alt="Estacionamento" class="w-32 h-32 rounded-lg object-cover shadow">
+          <div>
+            <h3 class="font-bold text-xl mb-2">Estacionamento</h3>
+            <p>Amplo estacionamento para conforto e segurança dos convidados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIA -->
+  <section id="galeria" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Galeria de Fotos</h2>
+      <div class="grid md:grid-cols-3 gap-4">
+        <img src="/img/foto1.jpg" alt="Foto 1" class="w-full h-64 object-cover rounded-lg shadow">
+        <img src="/img/foto2.jpg" alt="Foto 2" class="w-full h-64 object-cover rounded-lg shadow">
+        <img src="/img/foto3.jpg" alt="Foto 3" class="w-full h-64 object-cover rounded-lg shadow">
+        <img src="/img/foto4.jpg" alt="Foto 4" class="w-full h-64 object-cover rounded-lg shadow">
+        <img src="/img/foto5.jpg" alt="Foto 5" class="w-full h-64 object-cover rounded-lg shadow">
+        <img src="/img/foto6.jpg" alt="Foto 6" class="w-full h-64 object-cover rounded-lg shadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" class="py-20">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Depoimentos</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-green-50 p-6 rounded-lg shadow text-center">
+          <p>"A chácara é maravilhosa, nosso casamento foi perfeito!"</p>
+          <span class="block mt-4 font-bold">- Ana e Lucas</span>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow text-center">
+          <p>"Fizemos nossa festa de final de ano aqui e todos adoraram!"</p>
+          <span class="block mt-4 font-bold">- Empresa XYZ</span>
+        </div>
+        <div class="bg-green-50 p-6 rounded-lg shadow text-center">
+          <p>"O atendimento e a estrutura são impecáveis, recomendo!"</p>
+          <span class="block mt-4 font-bold">- Juliana M.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <form class="space-y-4">
+          <input type="text" placeholder="Nome" class="w-full p-3 rounded border border-gray-300">
+          <input type="email" placeholder="E-mail" class="w-full p-3 rounded border border-gray-300">
+          <input type="tel" placeholder="Telefone" class="w-full p-3 rounded border border-gray-300">
+          <textarea placeholder="Mensagem" class="w-full p-3 rounded border border-gray-300"></textarea>
+          <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+            Enviar Mensagem
+          </button>
+        </form>
+        <div>
+          <iframe class="w-full h-96 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RODAPÉ -->
+  <footer class="bg-green-700 text-white py-10">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <p>© 2025 Chácara Paraíso. Todos os direitos reservados.</p>
+      <p class="mt-2">Contato: (11) 99999-9999 | <a href="https://wa.me/5511999999999" class="underline">WhatsApp</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
