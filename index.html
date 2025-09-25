@@ -3,31 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chácara Paraíso - Eventos e Festas</title>
+  <title>Infinity Dreams- Eventos e Festas</title>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="font-sans text-gray-800">
 
-  <!-- HEADER -->
-  <header class="fixed top-0 left-0 w-full bg-green-700 shadow z-50">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-4 text-white">
-      <h1 class="text-2xl font-bold cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-        Chácara Paraíso
-      </h1>
-      <nav class="hidden md:flex space-x-6 text-white font-semibold">
-        <a href="#sobre" class="hover:text-green-300 transition">Sobre</a>
-        <a href="#servicos" class="hover:text-green-300 transition">Serviços</a>
-        <a href="#galeria" class="hover:text-green-300 transition">Galeria</a>
-        <a href="#depoimentos" class="hover:text-green-300 transition">Depoimentos</a>
-        <a href="#contato" class="hover:text-green-300 transition">Contato</a>
-      </nav>
-      <!-- botão WhatsApp mobile -->
-      <a href="https://wa.me/5511999999999" target="_blank" class="md:hidden bg-white text-green-700 px-4 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">
-        WhatsApp
-      </a>
-    </div>
-  </header>
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-green-700 shadow z-50">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4 md:px-6 py-4 text-white">
+    <!-- Logo -->
+    <h1 class="text-2xl font-bold cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      Infinity Dreams - Eventos e Festas
+    </h1>
+
+    <!-- Menu Desktop -->
+    <nav class="hidden md:flex space-x-6 text-white font-semibold">
+      <a href="#sobre" class="hover:text-green-300 transition">Sobre</a>
+      <a href="#servicos" class="hover:text-green-300 transition">Serviços</a>
+      <a href="#galeria" class="hover:text-green-300 transition">Galeria</a>
+      <a href="#depoimentos" class="hover:text-green-300 transition">Depoimentos</a>
+      <a href="#contato" class="hover:text-green-300 transition">Contatos</a>
+    </nav>
+
+    <!-- Botão WhatsApp Desktop -->
+    <a href="https://wa.me/5511999999999" target="_blank" 
+       class="hidden md:inline bg-white text-green-700 px-4 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+      WhatsApp
+    </a>
+
+    <!-- Botão Hambúrguer / Fechar -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none">
+      <!-- Ícone hambúrguer -->
+      <svg id="icon-hamburger" class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      <!-- Ícone X -->
+      <svg id="icon-close" class="w-8 h-8 text-white hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Menu Mobile com animação -->
+  <div id="mobile-menu" 
+       class="absolute top-full left-0 w-full bg-green-700 text-white px-6 pb-4 space-y-4 font-semibold 
+              transform scale-y-0 opacity-0 origin-top transition-all duration-300 ease-in-out md:hidden">
+    <a href="#sobre" class="block hover:text-green-300 transition">Sobre</a>
+    <a href="#servicos" class="block hover:text-green-300 transition">Serviços</a>
+    <a href="#galeria" class="block hover:text-green-300 transition">Galeria</a>
+    <a href="#depoimentos" class="block hover:text-green-300 transition">Depoimentos</a>
+    <a href="#contato" class="block hover:text-green-300 transition">Contato</a>
+    <!-- Botão WhatsApp Mobile -->
+    <a href="https://wa.me/5511999999999" target="_blank" 
+       class="block bg-white text-green-700 px-4 py-2 rounded-full font-semibold shadow hover:bg-gray-200 transition">
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- Script -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const iconHamburger = document.getElementById("icon-hamburger");
+  const iconClose = document.getElementById("icon-close");
+
+  menuToggle.addEventListener("click", () => {
+    const isClosed = mobileMenu.classList.contains("scale-y-0");
+
+    if (isClosed) {
+      // Abre o menu
+      mobileMenu.classList.remove("scale-y-0", "opacity-0");
+      mobileMenu.classList.add("scale-y-100", "opacity-100");
+      // Troca ícones
+      iconHamburger.classList.add("hidden");
+      iconClose.classList.remove("hidden");
+    } else {
+      // Fecha o menu
+      mobileMenu.classList.add("scale-y-0", "opacity-0");
+      mobileMenu.classList.remove("scale-y-100", "opacity-100");
+      // Troca ícones
+      iconHamburger.classList.remove("hidden");
+      iconClose.classList.add("hidden");
+    }
+  });
+</script>
+
+<!-- HEADER -->
+
 
 <!-- HERO SLIDER -->
 <section id="hero-slider" class="relative w-full h-screen overflow-hidden text-white">
@@ -35,7 +101,7 @@
   <div class="hero-slides w-full h-full relative">
     
     <!-- Slide 1 -->
-    <div class="slide absolute inset-0 w-full h-full flex flex-col justify-center items-center px-6 transition-opacity duration-700 ease-in-out opacity-100 bg-cover bg-center" style="background-image: url('/img/chacara-hero1.jpg');">
+    <div class="slide absolute inset-0 w-full h-full flex flex-col justify-center items-center px-6 transition-opacity duration-700 ease-in-out opacity-100 bg-cover bg-center" style="background-image: url('/img/Slides/CAmpo.JPG');">
       <div class="absolute inset-0 bg-black/40"></div>
       <div class="relative z-10 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Seu evento inesquecível começa aqui</h1>
@@ -45,7 +111,7 @@
     </div>
 
     <!-- Slide 2 -->
-    <div class="slide absolute inset-0 w-full h-full flex flex-col justify-center items-center px-6 transition-opacity duration-700 ease-in-out opacity-0 bg-cover bg-center" style="background-image: url('/img/chacara-hero2.jpg');">
+    <div class="slide absolute inset-0 w-full h-full flex flex-col justify-center items-center px-6 transition-opacity duration-700 ease-in-out opacity-0 bg-cover bg-center" style="background-image: url('/img/Slides/foto\ piscina.JPG');">
       <div class="absolute inset-0 bg-black/40"></div>
       <div class="relative z-10 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">Celebre momentos especiais</h1>
@@ -53,6 +119,30 @@
         <a href="https://wa.me/5511999999999" target="_blank" class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold shadow-md hover:bg-gray-200 hover:scale-105 hover:shadow-lg transition">Reserve pelo WhatsApp</a>
       </div>
     </div>
+
+  <!-- Slide 3 -->
+<div class="slide absolute inset-0 w-full h-full flex flex-col justify-center items-center px-6 
+     transition-opacity duration-700 ease-in-out opacity-0 
+     bg-center bg-no-repeat" 
+     style="background-image: url('/img/Slides/AIRBNB2.jpg'); background-size: 100% 100%;">
+  
+  <!-- Overlay escuro -->
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <!-- Conteúdo -->
+  <div class="relative z-10 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-lg">
+      Nossa hospedagem também está no Airbnb
+    </h1>
+    <p class="text-lg md:text-2xl mb-6 drop-shadow-lg">
+      Conforto, lazer e praticidade em um só lugar
+    </p>
+    <a href="https://i-cliq.com/m9xFCo" target="_blank" 
+       class="bg-white text-green-700 px-6 py-3 rounded-full font-semibold shadow-md hover:bg-gray-200 hover:scale-105 hover:shadow-lg transition">
+      Ver no Airbnb
+    </a>
+  </div>
+</div>
 
     <!-- Botões laterais -->
     <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/30 text-white p-2 rounded-full hover:bg-black/50 transition z-20">
@@ -66,9 +156,11 @@
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
       <button class="dot w-4 h-4 rounded-full bg-white opacity-100 transition" aria-label="Slide 1"></button>
       <button class="dot w-4 h-4 rounded-full bg-white opacity-50 transition" aria-label="Slide 2"></button>
+      <button class="dot w-4 h-4 rounded-full bg-white opacity-50 transition" aria-label="Slide 3"></button>
     </div>
   </div>
 </section>
+
 
 <script>
   const slides = document.querySelectorAll('.slide');
@@ -127,7 +219,7 @@
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center mb-8">Sobre a Chácara</h2>
       <p class="text-center text-lg md:text-xl max-w-3xl mx-auto mb-6">
-        A Chácara Paraíso oferece um espaço completo para tornar seus eventos inesquecíveis. 
+        O Espaço Infinity Dreams oferece um espaço completo para tornar seus eventos inesquecíveis. 
         Contamos com salão amplo, piscina, churrasqueira, estacionamento e toda infraestrutura para receber seus convidados com conforto e segurança.
       </p>
       <div class="grid md:grid-cols-3 gap-6 mt-10">
@@ -150,57 +242,161 @@
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" class="py-20">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Nossos Serviços</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <div class="flex items-center space-x-6">
-          <img src="/img/piscina.jpg" alt="Piscina" class="w-32 h-32 rounded-lg object-cover shadow">
-          <div>
-            <h3 class="font-bold text-xl mb-2">Piscina e área de lazer</h3>
-            <p>Espaço para relaxamento e diversão de todos os convidados.</p>
-          </div>
-        </div>
-        <div class="flex items-center space-x-6">
-          <img src="/img/salao.jpg" alt="Salão" class="w-32 h-32 rounded-lg object-cover shadow">
-          <div>
-            <h3 class="font-bold text-xl mb-2">Salão coberto</h3>
-            <p>Perfeito para casamentos e festas em qualquer clima.</p>
-          </div>
-        </div>
-        <div class="flex items-center space-x-6">
-          <img src="/img/churrasqueira.jpg" alt="Churrasqueira" class="w-32 h-32 rounded-lg object-cover shadow">
-          <div>
-            <h3 class="font-bold text-xl mb-2">Churrasqueira</h3>
-            <p>Área gourmet para churrascos e confraternizações.</p>
-          </div>
-        </div>
-        <div class="flex items-center space-x-6">
-          <img src="/img/estacionamento.jpg" alt="Estacionamento" class="w-32 h-32 rounded-lg object-cover shadow">
-          <div>
-            <h3 class="font-bold text-xl mb-2">Estacionamento</h3>
-            <p>Amplo estacionamento para conforto e segurança dos convidados.</p>
-          </div>
+ <section id="servicos" class="py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Nossos Serviços</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Piscina -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Piscina.JPG" alt="Piscina" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Piscina e área de lazer</h3>
+          <p>Espaço para relaxamento e diversão de todos os convidados.</p>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- GALERIA -->
-  <section id="galeria" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Galeria de Fotos</h2>
-      <div class="grid md:grid-cols-3 gap-4">
-        <img src="/img/foto1.jpg" alt="Foto 1" class="w-full h-64 object-cover rounded-lg shadow">
-        <img src="/img/foto2.jpg" alt="Foto 2" class="w-full h-64 object-cover rounded-lg shadow">
-        <img src="/img/foto3.jpg" alt="Foto 3" class="w-full h-64 object-cover rounded-lg shadow">
-        <img src="/img/foto4.jpg" alt="Foto 4" class="w-full h-64 object-cover rounded-lg shadow">
-        <img src="/img/foto5.jpg" alt="Foto 5" class="w-full h-64 object-cover rounded-lg shadow">
-        <img src="/img/foto6.jpg" alt="Foto 6" class="w-full h-64 object-cover rounded-lg shadow">
+      <!-- Salão -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Salao.JPG" alt="Salão" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Salão coberto</h3>
+          <p>Perfeito para casamentos e festas em qualquer clima.</p>
+        </div>
       </div>
+
+      <!-- Churrasqueira -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/churrasqueira.jpg" alt="Churrasqueira" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Churrasqueira</h3>
+          <p>Área gourmet para churrascos e confraternizações.</p>
+        </div>
+      </div>
+
+      <!-- Estacionamento -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Estacionamento.JPG" alt="Estacionamento" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Estacionamento</h3>
+          <p>Amplo estacionamento para conforto e segurança dos convidados.</p>
+        </div>
+      </div>
+
+      <!-- Quartos -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Quartos.JPG" alt="Quartos" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Quartos confortáveis</h3>
+          <p>Acomodações aconchegantes para até 52 pessoas.</p>
+        </div>
+      </div>
+
+      <!-- Cozinha -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Cozinha.JPG" alt="Cozinha" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Cozinha equipada</h3>
+          <p>Espaço completo para preparar refeições com praticidade.</p>
+        </div>
+      </div>
+
+      <!-- Campo -->
+      <div class="flex items-center space-x-6">
+        <img src="/img/Nossos serviços/Campo.JPG" alt="Campo" class="w-32 h-32 rounded-lg object-cover shadow">
+        <div>
+          <h3 class="font-bold text-xl mb-2">Campo de futebol</h3>
+          <p>Campo gramado perfeito para jogos e momentos de lazer.</p>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Galeria de Fotos</h2>
+    <div id="galleryGrid" class="grid md:grid-cols-3 gap-4">
+      <!-- Fotos iniciais (as primeiras 6) -->
+      <img src="/img/Galeria de fotos/Campo.JPG" alt="Foto 1" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+      <img src="/img/Galeria de fotos/Cozinha.JPG" alt="Foto 2" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+      <img src="/img/Galeria de fotos/Estacionamento.JPG" alt="Foto 3" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+      <img src="/img/Galeria de fotos/foto piscina.JPG" alt="Foto 4" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+      <img src="/img/Galeria de fotos/foto1.JPG" alt="Foto 5" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+      <img src="/img/Galeria de fotos/foto2.JPG" alt="Foto 6" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer">
+
+      <!-- Fotos ocultas inicialmente -->
+      <img src="/img/Galeria de fotos/foto3.JPG" alt="Foto 7" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+      <img src="/img/Galeria de fotos/foto4.JPG" alt="Foto 8" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+      <img src="/img/Galeria de fotos/foto5.JPG" alt="Foto 9" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+      <img src="/img/Galeria de fotos/foto6.JPG" alt="Foto 10" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+      <img src="/img/Galeria de fotos/foto7.JPG" alt="Foto 11" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+      <img src="/img/Galeria de fotos/foto8.JPG" alt="Foto 12" class="gallery-img w-full h-64 object-cover rounded-lg shadow cursor-pointer hidden">
+    </div>
+
+    <div class="text-center mt-6">
+      <button id="loadMoreBtn" class="bg-green-700 text-white px-6 py-2 rounded-full font-semibold shadow hover:bg-green-800 transition">
+        Ver mais
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX (mantém o mesmo) -->
+<div id="lightbox" class="fixed inset-0 bg-black/90 hidden items-center justify-center z-50">
+  <button id="closeLightbox" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</button>
+  <img id="lightboxImg" src="" class="max-h-[80vh] max-w-[90vw] rounded-lg shadow-lg">
+  <button id="prevImg" class="absolute left-6 text-white text-4xl font-bold">&#10094;</button>
+  <button id="nextImg" class="absolute right-6 text-white text-4xl font-bold">&#10095;</button>
+</div>
+
+<script>
+  const galleryImages = document.querySelectorAll('.gallery-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const closeLightbox = document.getElementById('closeLightbox');
+  const prevImg = document.getElementById('prevImg');
+  const nextImg = document.getElementById('nextImg');
+  let currentIndex = 0;
+
+  // Abrir lightbox
+  function openLightbox(index) {
+    currentIndex = index;
+    lightboxImg.src = galleryImages[currentIndex].src;
+    lightbox.classList.remove('hidden');
+    lightbox.classList.add('flex');
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
+  });
+
+  // Navegação e fechamento
+  closeLightbox.addEventListener('click', () => lightbox.classList.add('hidden'));
+  prevImg.addEventListener('click', () => { currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length; showImage(); });
+  nextImg.addEventListener('click', () => { currentIndex = (currentIndex + 1) % galleryImages.length; showImage(); });
+  lightbox.addEventListener('click', e => { if(e.target === lightbox) lightbox.classList.add('hidden'); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') lightbox.classList.add('hidden'); if(e.key==='ArrowLeft') prevImg.click(); if(e.key==='ArrowRight') nextImg.click(); });
+
+  function showImage() { lightboxImg.src = galleryImages[currentIndex].src; }
+
+  // BOTÃO VER MAIS
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn.addEventListener('click', () => {
+    const hiddenImages = document.querySelectorAll('.gallery-img.hidden');
+    hiddenImages.forEach((img, i) => { if(i<6) img.classList.remove('hidden'); });
+    // Se não tiver mais imagens ocultas, esconder o botão
+    if(document.querySelectorAll('.gallery-img.hidden').length === 0) loadMoreBtn.style.display = 'none';
+  });
+</script>
+
+<!-- GALERIA -->
+
+
+
+
 
   <!-- DEPOIMENTOS -->
   <section id="depoimentos" class="py-20">
@@ -223,34 +419,167 @@
     </div>
   </section>
 
-  <!-- CONTATO -->
-  <section id="contato" class="py-20 bg-gray-50">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <form class="space-y-4">
-          <input type="text" placeholder="Nome" class="w-full p-3 rounded border border-gray-300">
-          <input type="email" placeholder="E-mail" class="w-full p-3 rounded border border-gray-300">
-          <input type="tel" placeholder="Telefone" class="w-full p-3 rounded border border-gray-300">
-          <textarea placeholder="Mensagem" class="w-full p-3 rounded border border-gray-300"></textarea>
-          <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
-            Enviar Mensagem
-          </button>
-        </form>
-        <div>
-          <iframe class="w-full h-96 rounded shadow" src="https://www.google.com/maps/embed?pb=!1m18!..." allowfullscreen="" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- CONTATO -->
+<section id="contato" class="py-20 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Entre em Contato</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <!-- FORMULÁRIO -->
+      <form id="contactForm" class="space-y-4">
+        <input type="text" name="nome" placeholder="Nome" required class="w-full p-3 rounded border border-gray-300">
+        <input type="email" name="email" placeholder="E-mail" required class="w-full p-3 rounded border border-gray-300">
+        <input type="tel" name="telefone" placeholder="Telefone" required class="w-full p-3 rounded border border-gray-300">
+        <textarea name="mensagem" placeholder="Mensagem" required class="w-full p-3 rounded border border-gray-300"></textarea>
+        <button type="submit" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-600 transition">
+          Enviar Mensagem
+        </button>
+      </form>
 
-  <!-- RODAPÉ -->
-  <footer class="bg-green-700 text-white py-10">
-    <div class="max-w-6xl mx-auto px-4 text-center">
-      <p>© 2025 Chácara Paraíso. Todos os direitos reservados.</p>
-      <p class="mt-2">Contato: (11) 99999-9999 | <a href="https://wa.me/5511999999999" class="underline">WhatsApp</a></p>
+      <!-- MAPS + BOTÕES -->
+    <div class="flex flex-col space-y-4">
+  <!-- MAPS -->
+  <iframe class="w-full h-96 rounded shadow" 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.123456789!2d-46.378912!3d-23.678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5abcdef12345%3A0xabcdef123456789!2sEspa%C3%A7o%20Infinity%20Dreams!5e0!3m2!1spt-BR!2sbr!4v1690000000000!5m2!1spt-BR!2sbr" 
+    allowfullscreen="" loading="lazy">
+  </iframe>
+
+  <!-- ENDEREÇO -->
+  <p class="text-gray-700 font-semibold text-center">
+    Estrada Eduardo Valeriano Nardeli, Ribeirão Pires - 09443-270
+  </p>
+
+  <!-- BOTÕES REDES SOCIAIS -->
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="https://www.instagram.com/espacoinfinitydreams/" target="_blank" 
+       class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-full font-semibold transition">
+      Instagram
+    </a>
+    <a href="https://www.airbnb.com.br/users/show/SEUID" target="_blank" 
+       class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-full font-semibold transition">
+      Airbnb
+    </a>
+    <a href="https://wa.me/5511935355768?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Espaço%20Infinity%20Dreams." target="_blank" 
+       class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded-full font-semibold transition">
+      WhatsApp
+    </a>
+  </div>
+</div>
+
     </div>
-  </footer>
+  </div>
+</section>
+
+<!-- SCRIPT PARA SIMULAR ENVIO DO FORMULÁRIO -->
+<script>
+  const form = document.getElementById('contactForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Pegar valores
+    const nome = form.nome.value;
+    const email = form.email.value;
+    const telefone = form.telefone.value;
+    const mensagem = form.mensagem.value;
+
+    // Aqui você pode enviar via AJAX ou usar um serviço externo como EmailJS
+    alert(`Mensagem enviada!\nNome: ${nome}\nEmail: ${email}\nTelefone: ${telefone}\nMensagem: ${mensagem}`);
+
+    form.reset(); // limpa formulário
+  });
+</script>
+
+<!-- ÍCONES FLUTUANTES -->
+<div class="fixed bottom-6 right-6 flex flex-col space-y-4 z-50">
+  <!-- WhatsApp -->
+  <a href="https://wa.me/5511935355768?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Espaço%20Infinity%20Dreams." 
+     target="_blank" 
+     class="floating-icon bg-green-500 hover:bg-green-600 p-4 rounded-full shadow-lg flex items-center justify-center transition-transform transform hover:scale-110"
+     title="WhatsApp - Espaço Infinity Dreams">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.868-2.03-.967-.272-.099-.47-.149-.668.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.668-1.611-.916-2.206-.242-.579-.487-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+  </a>
+
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/espacoinfinitydreams/" target="_blank" 
+     class="floating-icon bg-pink-500 hover:bg-pink-600 p-4 rounded-full shadow-lg flex items-center justify-center transition-transform transform hover:scale-110"
+     title="Instagram - Espaço Infinity Dreams">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2.25a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- ANIMAÇÃO LEVE (movimento tipo "robô") -->
+<style>
+  .floating-icon {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+
+
+
+<!-- ÍCONES FLUTUANTES -->
+
+
+
+
+<!-- RODAPÉ MODERNO -->
+<footer class="bg-green-700 text-white py-10">
+  <div class="max-w-6xl mx-auto px-4 text-center space-y-4">
+    <p class="font-semibold text-lg">© 2025 Espaço Infinity Dreams. Todos os direitos reservados.</p>
+    <p class="text-sm">Entre em contato pelas redes sociais:</p>
+
+    <!-- ÍCONES SOCIAIS -->
+    <div class="flex justify-center items-center space-x-6 mt-2">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5511935355768?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Espaço%20Infinity%20Dreams." 
+         target="_blank" 
+         class="bg-green-500 hover:bg-green-600 p-3 rounded-full shadow-lg transition-transform transform hover:scale-110"
+         title="WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.868-2.03-.967-.272-.099-.47-.149-.668.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.074-.149-.668-1.611-.916-2.206-.242-.579-.487-.5-.668-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.412.248-.694.248-1.289.173-1.412-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/espacoinfinitydreams/" target="_blank"
+         class="bg-pink-500 hover:bg-pink-600 p-3 rounded-full shadow-lg transition-transform transform hover:scale-110"
+         title="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5a4.25 4.25 0 004.25-4.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zm8.75 2.25a.75.75 0 110 1.5.75.75 0 010-1.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7z"/>
+        </svg>
+      </a>
+
+      <!-- Airbnb -->
+      <a href="https://www.airbnb.com.br/users/show/SEUID" target="_blank"
+         class="bg-red-600 hover:bg-red-700 p-3 rounded-full shadow-lg transition-transform transform hover:scale-110"
+         title="Airbnb">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ANIMAÇÃO LEVE PARA OS ÍCONES -->
+<style>
+  footer .transition-transform {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+</style>
+
 
 </body>
 </html>
