@@ -1,0 +1,21 @@
+{
+  "name": "infinity-dreams",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site e painel administrativo do Espaço Infinity Dreams",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "check": "node --check server.js && node --check app.js && node --check admin.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "dependencies": {
+    "compression": "^1.8.1",
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "sharp": "^0.35.2"
+  }
+}
